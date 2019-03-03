@@ -1,6 +1,6 @@
-FROM ruby:2.5.1
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN mkdir /spree
-WORKDIR /spree
-ADD . /spree
-CMD ["bash"]
+FROM python:2.7
+EXPOSE 80
+WORKDIR /code
+ADD . /code
+RUN touch index.html
+CMD python index.py
